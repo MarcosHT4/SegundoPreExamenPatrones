@@ -1,8 +1,8 @@
 package ejercicio2;
 
-public class Entrevista implements IOrden{
+public class Disciplina implements IOrden{
 
-    private String type = "entrevista";
+    private String type = "disciplina";
 
     @Override
     public String getType() {

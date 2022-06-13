@@ -1,6 +1,6 @@
 package ejercicio7;
 
-public class AgenteDeCredito implements IAgentePago{
+public class EncargadoPrestamos implements IAgentePago{
 
     private IAgentePago next;
 
@@ -14,10 +14,13 @@ public class AgenteDeCredito implements IAgentePago{
     @Override
     public void criteriaHandler(int cantidad) {
 
-        if(ManejadorPrestamo.getInstance().getCantidadPagada() < ManejadorPrestamo.getInstance().getCantidadOriginal()*50/100); {
+        if(ManejadorPrestamo.getInstance().getCantidadPagada() >= ManejadorPrestamo.getInstance().getCantidadOriginal()*50/100) {
 
-            ManejadorPrestamo.getInstance().setCantidadPagada(ManejadorPrestamo.getInstance().getCantidadPagada() + cantidad);
-            System.out.println("AGENTE> GRACIAS POR EL PAGO, DESEA REFINANCIAR SU PRESTAMO?");
+            System.out.println("ENCARGADO> GRACIAS! TOME SUS DOCUMENTOS...");
+
+        } else {
+
+            next.criteriaHandler(cantidad);
 
         }
 

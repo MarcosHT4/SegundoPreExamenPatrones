@@ -1,6 +1,6 @@
 package ejercicio2;
 
-public class General implements IEjercito{
+public class Cabo implements IEjercito{
 
     private IEjercito next;
 
@@ -15,9 +15,9 @@ public class General implements IEjercito{
     @Override
     public void criteriaHandler(IOrden orden) {
 
-        if(orden.getType().equals("entrevista")) {
+        if(orden.getType().equals("limpieza")) {
 
-            System.out.println("El general está atendiendo la orden");
+            System.out.println("El cabo está atendiendo la orden");
 
         } else {
 
